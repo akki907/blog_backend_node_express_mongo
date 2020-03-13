@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const passport = require("passport");
 const Post = require("./../models/Posts");
+const Filter = require('bad-words');
+
+
 const postValidationInput = require("./../validators/postValidation");
 
 // @route   POST api/post/createPost
@@ -218,7 +221,7 @@ router.post(
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const { errors, isValid } = postValidationInput(req.body);
-
+    const customFilter = new Filter({ placeHolder: 'x'});
     // Check Validation
     if (!isValid) {
       // If any errors, send 400 with errors object
@@ -228,12 +231,9 @@ router.post(
     Post.findById(req.params.id)
       .then(post => {
         const newComment = {
-          text: req.body.text,
-          name: req.body.name,
-          avatar: req.body.avatar,
+          text: customFilter.clean(req.body.text),
           user: req.user._id
         };
-
         // Add to comments array
         post.comments.unshift(newComment);
 
