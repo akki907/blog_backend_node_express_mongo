@@ -4,13 +4,11 @@
   "description": "api for social network",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "install":"yarn"
+    "start": "nodemon server.js"
   },
   "author": "akash",
   "license": "ISC",
   "dependencies": {
-    "async": "^2.6.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "concurrently": "^3.5.1",
@@ -18,8 +16,8 @@
     "gravatar": "^1.6.0",
     "jsonwebtoken": "^8.2.1",
     "moment": "^2.22.1",
-    "mongoose": "^5.0.14",
-    "morgan": "^1.9.0",
+    "mongoose": "^5.9.4",
+    "morgan": "^1.9.1",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "validator": "^9.4.1"
