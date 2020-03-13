@@ -4,8 +4,7 @@
   "description": "api for social network",
   "main": "server.js",
   "scripts": {
-    "server": "nodemon server.js",
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "install":"yarn"
   },
   "author": "akash",
