@@ -1,0 +1,5 @@
+{
+    "name":"My stack",
+    "description": "A Mern Stack app for Blog",
+    "keywords":["mean","mystuff","angular"]
+  }
